@@ -1,0 +1,50 @@
+body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+
+.main-title {
+    grid-column: 5/10;
+    grid-row: 1/2;
+    text-align: center;
+    color: #d35151;
+}
+
+.cards {
+    grid-column: 3/12;
+    grid-row: 2/5;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cards>.card {
+    background-color: gray;
+    width: 30vw;
+}
+
+.card>.card_title {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.choose {
+    grid-column: 5/10;
+    grid-row: 5/6;
+    text-align: center;
+    color: #d35151;
+}
+
+.container__choice {
+    grid-column: 3/12;
+    grid-row: 6/9;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.choice:hover {
+    background-color: aqua;
+}
