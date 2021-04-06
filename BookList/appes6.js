@@ -54,7 +54,45 @@ class UI {
         }
     }
 }
+//Local Storage Class
+class Store {
+    static getBooks() {
+        let books;
+        if (localStorage.getItem('books') === null) {
+            books = [];
+        } else {
+            books = JSON.parse(localStorage.getItem('books'));
+        }
+        return books;
 
+    }
+    static displayBooks() {
+        const books = Store.getBooks();
+        books.forEach(function(book) {
+            const ui = new UI;
+            // add book to UI
+            ui.addBookToList(book);
+        })
+    }
+    static addBook(book) {
+        const books = Store.getBooks();
+        books.push(book);
+        console.log(books);
+        localStorage.setItem('books', JSON.stringify(books));
+    }
+
+    static removeBook(isbn) {
+        const books = Store.getBooks();
+        books.forEach(function(book, index) {
+            if (book.isbn === isbn) {
+                books.splice(index, 1);
+            }
+        })
+        localStorage.setItem('books', JSON.stringify(books));
+    }
+}
+//DOM Event Loader
+document.addEventListener('DocumentContentLoaded', Store.displayBooks());
 
 // Event listeners for add book 
 document.getElementById('book-form').addEventListener('submit', function(e) {
@@ -67,6 +105,7 @@ document.getElementById('book-form').addEventListener('submit', function(e) {
     const book = new Book(title, author, isbn);
     const ui = new UI();
 
+
     //validate 
     if (title === '' || author === '' || ISBN == '') {
         //error alter 
@@ -74,6 +113,8 @@ document.getElementById('book-form').addEventListener('submit', function(e) {
     } else {
         // ui add book to list
         ui.addBookToList(book);
+        //add to storage 
+        Store.addBook(book);
         //show success message
         ui.showAlert('Book added successfully!', 'success');
         //clear fields after submit
@@ -87,14 +128,15 @@ document.getElementById('book-form').addEventListener('submit', function(e) {
 // event listener for delete 
 
 
-
-// one book data
 document.querySelector('#book-list').addEventListener('click', function(e) {
     const ui = new UI();
     ui.deleteBook(e.target);
+    Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
     ui.showAlert('Book successfuly deleted', 'success')
     e.preventDefault();
 })
+
+// one book data
 daVinci = {
     title: 'Da Vinci Code ',
     author: 'Dan Brown',
