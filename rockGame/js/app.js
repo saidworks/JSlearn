@@ -26,7 +26,7 @@ const choices = document.querySelectorAll('.choice');
 
 function Select(e) {
     new_choice = document.createElement("div");
-    new_choice = e.target
+    new_choice = e.target;
     console.log(new_choice)
     user.appendChild(new_choice)
 
