@@ -1,10 +1,8 @@
 const App = {
     data() {
         return {
-            warningObject: {
-                backgroundColor: 'auto',
-                border: 'transparent'
-            },
+            salesBtn: "btn-success",
+            totalBtn: "font-weight-bold bg-white",
             threshold: {
                 backgroundColor: "auto"
             },
@@ -32,21 +30,22 @@ const App = {
         },
         cartTotal() {
             return this.cart.reduce((inc, item) => Number(item.price) + inc, 0)
-        },
-        notEnough() {
-            if (this.cartTotal > 0) {
-                console.log(this.threshold);
-                this.threshold.backgroundColor = "gray";
-            }
         }
     },
     methods: {
         addToCart(product) {
             this.cart.push(product);
-            if (this.cartTotal >= 100) { this.warningObject.backgroundColor = 'red' }
+            if (this.cartTotal <= 200 && this.cartTotal >= 100) { this.salesBtn = "btn-warning"; } else if (this.cartTotal < 100) { this.salesBtn = "btn-success"; } else if (this.cartTotal >= 200) { this.salesBtn = "btn-danger"; }
         },
         currency(value) {
             return '$' + Number.parseFloat(value).toFixed(2);
+        },
+        changeColor() {
+            if (this.displayCart == true) {
+                this.totalBtn = "text-danger"
+            } else {
+                this.totalBtn = "font-weight-bold bg-white"
+            }
         }
     }
 }
