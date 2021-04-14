@@ -1,4 +1,4 @@
-const App = {
+const App = Vue.createApp({
     data() {
         return {
             salesBtn: "btn-success",
@@ -37,9 +37,6 @@ const App = {
             this.cart.push(product);
             if (this.cartTotal <= 200 && this.cartTotal >= 100) { this.salesBtn = "btn-warning"; } else if (this.cartTotal < 100) { this.salesBtn = "btn-success"; } else if (this.cartTotal >= 200) { this.salesBtn = "btn-danger"; }
         },
-        currency(value) {
-            return '$' + Number.parseFloat(value).toFixed(2);
-        },
         changeColor() {
             if (this.displayCart == true) {
                 this.totalBtn = "text-danger"
@@ -48,6 +45,6 @@ const App = {
             }
         }
     }
-}
+})
 
-Vue.createApp(App).mount('#app')
+App.mount('#app')
