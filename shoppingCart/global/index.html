@@ -44,25 +44,16 @@
         <input v-model.number="max" type="range" class="form-range" min="0" max="130">
 
         <div v-for="(item, index) in filteredProducts" :key="item.id" id="item-list" class="row align-items-center">
-            <div class="col-2 m-auto">
-                <button :style="borderStyle" @click="addToCart(item)" class="btn btn-success">+</button>
-            </div>
-            <div class="col-sm-4">
-                <img class="img-fluid d-block" :src="item.image" :alt="item.name">
-            </div>
-            <div class="col">
-                <h3 class="text-primary">{{item.name }}</h3>
-                <p class="mb-0">{{ item.description }}</p>
-                <div class="h5 float-right">
-                    <curr :value="item.price"></curr>
-                </div>
-            </div>
+            <product :item="item" @add="addToCart"></product>
+            <alert :Var="cartTotal">{{Var}}</alert>
         </div>
     </section>
 </div>
 
 <script src="assets/main.js"></script>
 <script src="assets/components/currency.js"></script>
+<script src="assets/components/product.js"></script>
+<script src="assets/components/alert.js"></script>
 </body>
 
 </html>
