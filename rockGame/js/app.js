@@ -25,9 +25,9 @@ const rock = document.querySelector('.rock');
 const choices = document.querySelectorAll('.choice');
 
 function Select(e) {
-    new_choice = document.createElement("div");
-    new_choice = e.target;
-    console.log(new_choice)
+    new_choice = document.createElement("img");
+    new_choice.setAttribute('src', e.target['src'])
+    new_choice.style = 'text-align:center'
     user.appendChild(new_choice)
 
 };
