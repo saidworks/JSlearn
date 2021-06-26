@@ -23,7 +23,7 @@ const scissors = document.querySelector('.scissors');
 const paper = document.querySelector('.paper');
 const rock = document.querySelector('.rock');
 const choices = document.querySelectorAll('.choice');
-
+//need to review it to select not move the img choice
 function Select(e) {
     new_choice = document.createElement("img");
     new_choice.setAttribute('src', e.target['src'])
