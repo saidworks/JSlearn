@@ -49,9 +49,32 @@ window.addEventListener("DOMContentLoaded",(e)=>{
 
 // make the selected pie appear at top of order page 
 window.addEventListener("DOMContentLoaded",(e)=>{
+    let locationBox = document.querySelector("#location");
+    let location = {
+        latitude: "unknown",
+        longitude: "unknown"
+    }
+
+        //get position for location
+    window.navigator.geolocation.getCurrentPosition(
+        function(position){
+            location = {
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude
+              };
+            locationBox.value = JSON.stringify(location);
+        },
+        function(error){
+            locationBox.value = JSON.stringify(location);
+
+        }
+    );
     const order = localStorage.getItem("order");
     if (order){
         const pieOrder = JSON.parse(order);
+
+        const orderInput = document.querySelector('#pie-order');
+        orderInput.value = order ;
 
         const pie = document.querySelector('.pie');
         const title = document.querySelector('.title');
@@ -66,3 +89,4 @@ window.addEventListener("DOMContentLoaded",(e)=>{
         img.setAttribute("src",`./images/${pieOrder.id}.png`);
     }
 })
+

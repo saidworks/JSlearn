@@ -1,4 +1,4 @@
-from flask import Flask,request
+from flask import Flask,request,json
 
 app = Flask(__name__)
 
@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 def readDate():
     data = request.form
-    return data
+    return json.dumps(data)
 
 if __name__ == "__main__" :
     app.run()
