@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IProduct } from '../product';
 
 @Component({
   selector: 'pm-products-list',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products-list.component.css']
 })
 export class ProductsListComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit(): void {
+
+  }
   pageTitle:String = "Products List";
   imageWidth: number = 50;
   imageMargin: number = 2;
-  products:any[] = [
+  showImage: boolean = false;
+  listFilter: string = 'type here';
+  products: IProduct[] = [
     {
       "productId": 2,
       "productName": "Garden Cart",
@@ -31,9 +39,10 @@ export class ProductsListComponent implements OnInit {
       "imageUrl": "assets/images/hammer.png"
     }
   ];
-  constructor() { }
 
-  ngOnInit(): void {
+  toggleImage(): void{
+    this.showImage = !this.showImage;
   }
+
 
 }
