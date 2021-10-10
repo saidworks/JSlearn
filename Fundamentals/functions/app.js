@@ -1,3 +1,6 @@
+// adding merge conflicts
+// here for testing
+
 // multiple arugments 
 function printAll(){
     for(let i=0;i<arguments.length;i++){
