@@ -1,3 +1,4 @@
+let test = [];
 // multiple arugments 
 function printAll(){
     for(let i=0;i<arguments.length;i++){
