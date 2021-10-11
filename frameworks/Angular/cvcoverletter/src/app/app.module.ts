@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UserSettingsFormComponent } from './user-settings-form/user-settings-form.component';
+import { ChildComponent } from "./child.component";
+import { ParentComponent } from './parent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    UserSettingsFormComponent
+    UserSettingsFormComponent,
+    ChildComponent,
+    ParentComponent
   ],
   imports: [
     BrowserModule,
