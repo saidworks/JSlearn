@@ -8,6 +8,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { UserSettingsFormComponent } from './user-settings-form/user-settings-form.component';
 import { ChildComponent } from "./child.component";
 import { ParentComponent } from './parent.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ParentComponent } from './parent.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
