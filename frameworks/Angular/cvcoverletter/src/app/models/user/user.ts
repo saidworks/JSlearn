@@ -1,7 +1,7 @@
 export interface User{
   name:string,
   premium : boolean,
-  userInterfaceStyle: string,
+  interfaceStyle: string,
   subscriptionType: string,
   notes: string
 

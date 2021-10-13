@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {finalize} from 'rxjs/operators';
 import { User } from '../models/user/user';
+import { UsersService } from '../services/users.service';
 @Component({
   selector: 'cv-user-settings-form',
   templateUrl: './user-settings-form.component.html',
@@ -7,14 +9,26 @@ import { User } from '../models/user/user';
 })
 export class UserSettingsFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
   }
-  user: User | undefined;
+  user: User = {
+    name:"Said",
+    premium : true,
+    interfaceStyle: "light",
+    subscriptionType: "Annual",
+    notes: "Flask"
+  
+  } ;
   submitted = false;
   onSubmit(){
-    this.submitted = true;
+    this.usersService.sendForm(this.user).subscribe(
+      success => console.log('success: ', success),
+    error => console.log('error')
+    )
+    
   }
+
 
 }

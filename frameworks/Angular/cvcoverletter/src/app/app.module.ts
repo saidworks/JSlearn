@@ -9,7 +9,7 @@ import { UserSettingsFormComponent } from './user-settings-form/user-settings-fo
 import { ChildComponent } from "./child.component";
 import { ParentComponent } from './parent.component';
 import { CommonModule } from '@angular/common';
-
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,8 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
