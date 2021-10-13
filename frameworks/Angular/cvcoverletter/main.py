@@ -1,14 +1,23 @@
-from flask import Flask, request, json,jsonify
+from flask import Flask, request, json, jsonify
+from flask_cors import CORS
+from flask_cors import cross_origin
+
 app = Flask(__name__)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 
-@app.route("/products", methods=["GET"])
+@app.route("/form", methods=['GET',"OPTIONS" , "POST"])
+@cross_origin()
 def read():
-  with open('./src/api/products/products.json') as products_file:
-    data = json.load(products_file)
-    data = jsonify(data)
-    data.headers.add('Access-Control-Allow-Origin', '*')
-  return data
+  print('it is working')
+  if request.method == 'OPTIONS':
+    return "it's options"
+  elif request.method == 'POST':
+    data = request.form
+    data = json.dumps(data)
+    print(data)
+    return data
+   
 
 
 if __name__ == "__main__":
