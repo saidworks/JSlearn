@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import {finalize} from 'rxjs/operators';
 import { User } from '../models/user/user';
 import { UsersService } from '../services/users.service';
@@ -21,6 +22,7 @@ export class UserSettingsFormComponent implements OnInit {
     notes: "Flask"
   
   } ;
+  f = NgForm;
   submitted = false;
   onSubmit(){
     this.usersService.sendForm(this.user).subscribe(

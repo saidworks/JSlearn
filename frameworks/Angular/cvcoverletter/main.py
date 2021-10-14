@@ -1,23 +1,18 @@
 from flask import Flask, request, json, jsonify
 from flask_cors import CORS
-from flask_cors import cross_origin
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/*": {"origins": "*"}})
+cors = CORS(app, resources={r"/form/*": {"origins": "*"}})
 
 
-@app.route("/form", methods=['GET',"OPTIONS" , "POST"])
-@cross_origin()
+@app.route("/form", methods=["GET" , "POST"])
 def read():
-  print('it is working')
-  if request.method == 'OPTIONS':
-    return "it's options"
-  elif request.method == 'POST':
-    data = request.form
+  if request.method == 'POST':
+    data = request.values
     data = json.dumps(data)
     print(data)
     return data
-   
+
 
 
 if __name__ == "__main__":
