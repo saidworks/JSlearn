@@ -1,0 +1,8 @@
+Try NextJS. https://nextjs.org/docs for backend 
+
+For resources I advise documentation
+For javascript use https://developer.mozilla.org/en-US/docs/Web/javascript
+For Typescript use https://www.typescriptlang.org/
+
+Angular intermediate use https://angular.io/
+https://www.learnrxjs.io/
