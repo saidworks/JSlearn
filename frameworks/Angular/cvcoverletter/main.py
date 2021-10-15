@@ -13,7 +13,11 @@ def read():
     print(data)
     return data
 
+@app.route('test',methods=["GET"])
+def test():
+  if request.method == 'GET':
+    pass
 
 
 if __name__ == "__main__":
-  app.run()
+  app.run(port=3000)
