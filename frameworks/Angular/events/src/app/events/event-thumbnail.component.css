@@ -1,0 +1,10 @@
+.pad-left {
+  padding-left: 1%;
+}
+
+.card h2{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  word-spacing: 5%;
+  color: #333000;
+}

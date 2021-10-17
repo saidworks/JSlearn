@@ -1,13 +1,13 @@
-<div class="card bg-secondary text-white thumbnail">
+<div class="card bg-light thumbnail">
   <h2 class="card-title">{{event.name}}</h2>
   <div class="card-body">
-    <div>Date : {{event.date}}</div>
-    <div>Time : {{event.time}}</div>
-    <div>Price : \${{event.price}}</div>
+    <div class="text-muted">Date : {{event.date}}</div>
+    <div class="text-muted">Time : {{event.time}}</div>
+    <div class="text-muted">Price : ${{event.price}}</div>
     <div>
     <span>Location: {{event.location.address}}</span>
-    <span>&nbsp;</span>
-    <span>{{event.location.country}}, {{event.location.city}}</span>
+    <span class="pad-left">{{event.location.country}}, {{event.location.city}}</span>
+
 
     </div>
 

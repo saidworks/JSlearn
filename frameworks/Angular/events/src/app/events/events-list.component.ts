@@ -17,6 +17,5 @@ export class EventsListComponent{
       city: 'London',
       country: 'England'
     }
-  }
-
+  };
 }
