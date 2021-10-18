@@ -8,3 +8,7 @@
   word-spacing: 5%;
   color: #333000;
 }
+
+.thumbnail{
+  min-height: 13rem;
+}

@@ -1,15 +1,14 @@
 <div class="card bg-light thumbnail">
-  <h2 class="card-title">{{event.name}}</h2>
+  <h2 class="card-title">{{event?.name}}</h2>
   <div class="card-body">
-    <div class="text-muted">Date : {{event.date}}</div>
-    <div class="text-muted">Time : {{event.time}}</div>
-    <div class="text-muted">Price : ${{event.price}}</div>
+    <div class="text-muted">Date : {{event?.date}}</div>
+    <div class="text-muted">Time : {{event?.time}}</div>
+    <div class="text-muted">Price : ${{event?.price}}</div>
     <div>
-    <span>Location: {{event.location.address}}</span>
-    <span class="pad-left">{{event.location.country}}, {{event.location.city}}</span>
-
-
+    <span>Location: {{event?.location.address}}</span>
+    <span class="pad-left">{{event?.location.country}}, {{event?.location.city}}</span>
     </div>
+    <div *ngIf="event?.onlineUrl">URL: {{event?.onlineUrl}}</div>
 
   </div>
 </div>
