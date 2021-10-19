@@ -2,7 +2,13 @@
   <h2 class="card-title">{{event?.name}}</h2>
   <div class="card-body">
     <div class="text-muted">Date : {{event?.date}}</div>
-    <div class="text-muted">Time : {{event?.time}}</div>
+    <div [ngSwitch]="event?.time"
+    [ngClass] = "getStartedTime()"
+    class="text-muted">Time : {{event?.time}}
+      <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+      <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
+      <span *ngSwitchDefault>(Normal Start)</span>
+    </div>
     <div class="text-muted">Price : ${{event?.price}}</div>
     <div>
     <span>Location: {{event?.location.address}}</span>

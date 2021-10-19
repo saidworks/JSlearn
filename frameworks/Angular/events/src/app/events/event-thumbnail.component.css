@@ -12,3 +12,14 @@
 .thumbnail{
   min-height: 13rem;
 }
+
+.green {
+  color: green !important;
+}
+.bold {
+  font-weight: bold;
+}
+.dangerous{
+  font-weight: 900 !important;
+  color: red !important;
+}
