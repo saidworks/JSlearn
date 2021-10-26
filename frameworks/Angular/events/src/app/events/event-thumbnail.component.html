@@ -1,4 +1,4 @@
-<div class="card bg-light thumbnail">
+<div class="card bg-light thumbnail" [routerLink]="['/events',event.id]">
   <h2 class="card-title">{{event?.name}}</h2>
   <div class="card-body">
     <div class="text-muted">Date : {{event?.date}}</div>

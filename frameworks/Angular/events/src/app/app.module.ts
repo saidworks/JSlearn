@@ -8,7 +8,9 @@ import { EventThumbnailComponent } from './events/event-thumbnail.component';
 import { EventsListComponent } from './events/events-list.component';
 import { NavbarComponent} from './nav/navbar.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
-
+import { appRoutes } from './routes';
+import { RouterModule } from '@angular/router';
+import { CreateEventComponent } from './events/create-event/create-event.component';
 
 @NgModule({
   imports: [
@@ -16,10 +18,11 @@ import { EventDetailsComponent } from './events/event-details/event-details.comp
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    RouterModule.forRoot(appRoutes)
   ],
 
   declarations: [
-    EventsAppComponent,EventsListComponent,EventThumbnailComponent, NavbarComponent, EventDetailsComponent
+    EventsAppComponent,EventsListComponent,EventThumbnailComponent, NavbarComponent, EventDetailsComponent, CreateEventComponent
   ],
 
   bootstrap: [EventsAppComponent],

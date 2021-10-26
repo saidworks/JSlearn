@@ -3,6 +3,11 @@ import { EventService } from "../shared/services/event-service.service";
 import { IEvent } from "../core/models/events";
 import { Subscription } from 'rxjs';
 import { TheToastrService } from "../shared/services/toastr.service";
+
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
 @Component({
   selector:"events-list",
   templateUrl: "./events-list.component.html"
@@ -12,8 +17,11 @@ export class EventsListComponent implements OnInit{
   sub?: Subscription;
   events?: IEvent[] = [];
   errorMessage: string = '';
+  selectedId?: number;
+  events$? : Observable<any>;
 
-  constructor(private EventService:EventService,private toastr: TheToastrService){
+  constructor(private EventService:EventService,private toastr: TheToastrService,
+              private route:ActivatedRoute){
   }
   ngOnInit(): void {
     this.sub = this.EventService.getEvents().subscribe({
@@ -22,6 +30,13 @@ export class EventsListComponent implements OnInit{
       },
       error: err => this.errorMessage = err
     });
+
+     this.events$ = this.route.paramMap.pipe(
+      switchMap(params => {
+        this.selectedId = Number(params.get('id'));
+        return this.EventService.getEvents();
+      })
+    );
   }
 
   handleThumbnailClick(eventName:string){
