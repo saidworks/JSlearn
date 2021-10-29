@@ -30,7 +30,7 @@ export class EventsListComponent implements OnInit{
       },
       error: err => this.errorMessage = err
     });
-
+    
      this.events$ = this.route.paramMap.pipe(
       switchMap(params => {
         this.selectedId = Number(params.get('id'));

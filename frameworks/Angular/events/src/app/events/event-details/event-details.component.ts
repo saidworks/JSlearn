@@ -20,14 +20,12 @@ export class EventDetailsComponent implements OnInit {
   ngOnInit(): void {
     //this.getEvent(1);
     const eventId = this.route.snapshot.paramMap.get('id');
-    this.getEvent(Number(eventId));
-  }
-
-  getEvent(id:number){
-    this.sub = this.eventService.getEvents().subscribe({
+    this.sub = this.eventService.getEvent(Number(eventId)).subscribe({
       next:response => {
-        this.event = response.find(event => event.id === id) ;
+        this.event = response.find(event => event.id === Number(eventId));
       }
     });
   }
+
+
 }
