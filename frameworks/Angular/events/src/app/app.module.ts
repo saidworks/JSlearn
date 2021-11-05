@@ -29,7 +29,17 @@ import { EventService } from './shared/services/event-service.service';
 
   bootstrap: [EventsAppComponent],
   providers:[
-      EventRouteActivatorService,EventService,ToastrService
+      EventRouteActivatorService,
+      EventService,
+      ToastrService,
+      {provide:'canDeactivateCreateEvent',
+      useValue:checkDirtyState}
   ]
 })
 export class AppModule { }
+export function checkDirtyState(component:CreateEventComponent){
+  if (component.isDirty){
+    return window.confirm('You did not save this event, do you really want to continue without saving? ');
+  }
+  return true;
+}
