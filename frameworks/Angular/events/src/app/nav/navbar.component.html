@@ -7,10 +7,14 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/events']" aria-current="page" >All Events</a>
+          <a class="nav-link active" [routerLink]="['/events']"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{exact:true}"
+                                    aria-current="page">All Events</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/events/new']">Create Event</a>
+          <a class="nav-link" [routerLink]="['/events/new']"
+                              routerLinkActive="active">Create Event</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>

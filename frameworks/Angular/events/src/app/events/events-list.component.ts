@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { EventService } from "../shared/services/event-service.service";
 import { IEvent } from "../core/models/events";
-import { Subscription } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { TheToastrService } from "../shared/services/toastr.service";
 
 import { ActivatedRoute } from '@angular/router';
