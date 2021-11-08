@@ -15,13 +15,14 @@ import { Error404Component } from './errors/error404/error404.component';
 import { EventRouteActivatorService } from './events/event-details/event-route-activator.service';
 import { EventService } from './shared/services/event-service.service';
 import { EventListResolver } from './events/event-list-resolver.service';
+
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
 
   declarations: [
