@@ -22,7 +22,7 @@ const computer = document.querySelector('.computer');
 const scissors = document.querySelector('.scissors');
 const paper = document.querySelector('.paper');
 const rock = document.querySelector('.rock');
-const choices = document.querySelectorAll('.choice');
+const choice = document.querySelector('.choice');
 //need to review it to select to accept just one choice
 function Select(e) {
     new_choice = document.createElement("img");
@@ -31,7 +31,7 @@ function Select(e) {
     user.appendChild(new_choice)
 
 };
-choices.forEach(choice => choice.addEventListener('click', Select));
+choice.addEventListener('click', Select,{once:true});
 
 
 // function userInput() {
