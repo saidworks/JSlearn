@@ -24,14 +24,14 @@ export class EventsListComponent implements OnInit{
               private route:ActivatedRoute){
   }
   ngOnInit(): void {
-    // subscribe to event service method 
+    // subscribe to event service method
     this.sub = this.EventService.getEvents().subscribe({
       next:response => {
         this.events = response ;
       },
       error: err => this.errorMessage = err
     });
-    // need to review this code more 
+    // need to review this code more
      this.events$ = this.route.paramMap.pipe(
       switchMap(params => {
         this.selectedId = Number(params.get('id'));

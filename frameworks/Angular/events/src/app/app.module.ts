@@ -14,13 +14,15 @@ import { CreateEventComponent } from './events/create-event/create-event.compone
 import { Error404Component } from './errors/error404/error404.component';
 import { EventRouteActivatorService } from './events/event-details/event-route-activator.service';
 import { EventService } from './shared/services/event-service.service';
+import { EventListResolver } from './events/event-list-resolver.service';
+
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
 
   declarations: [
@@ -29,7 +31,18 @@ import { EventService } from './shared/services/event-service.service';
 
   bootstrap: [EventsAppComponent],
   providers:[
-      EventRouteActivatorService,EventService,ToastrService
+      EventRouteActivatorService,
+      EventService,
+      ToastrService,
+      {provide:'canDeactivateCreateEvent',
+      useValue:checkDirtyState},
+      EventListResolver
   ]
 })
 export class AppModule { }
+export function checkDirtyState(component:CreateEventComponent){
+  if (component.isDirty){
+    return window.confirm('You did not save this event, do you really want to continue without saving? ');
+  }
+  return true;
+}
