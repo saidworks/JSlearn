@@ -29,15 +29,15 @@ function Select(e) {
     const new_choice = document.createElement("img");
    
     if(user.childElementCount==0 ){ 
-    new_choice.setAttribute('src', e.target['src'])
-    new_choice.style = 'text-align:center'
+    new_choice.setAttribute('src', e.target['src']);
+    new_choice.style = 'text-align:center';
     user.appendChild(new_choice);
   
 }
     
 
 };
-
+//problem it works only for paper 
 choices.forEach(choice => {choice.addEventListener('click', Select)});  
 
 
