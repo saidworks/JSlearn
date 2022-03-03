@@ -24,11 +24,11 @@ const paper = document.querySelector('.paper');
 const rock = document.querySelector('.rock');
 let choices = new Array(3);
 choices = [scissors,paper,rock]
-//need to review it to select to accept just one choice
+//need to review it to select to accept just one choice => fixed bug
 function Select(e) {
     const new_choice = document.createElement("img");
    
-    if(user.childElementCount==0 ){ 
+    if(user.childElementCount<1 ){ 
     new_choice.setAttribute('src', e.target['src']);
     new_choice.style = 'text-align:center';
     user.appendChild(new_choice);
@@ -37,7 +37,7 @@ function Select(e) {
     
 
 };
-//problem it works only for paper 
+//problem it works only for paper =>fixed 
 choices.forEach(choice => {choice.addEventListener('click', Select)});  
 
 
