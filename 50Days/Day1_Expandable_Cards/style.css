@@ -13,25 +13,30 @@ html {
 }
 h1 {
     font-family: 'Send Flowers', sans-serif;
-    font-size: 5rem;
+    font-size: 8rem;
+    margin:auto;
+    text-align: center;
 }
 body {
-        font-family:  'Montserrat', sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height : 100vh;
-        overflow: hidden;
+    font-family:  'Montserrat', sans-serif;
+    height : 100vh;
+    overflow: hidden;
+    width: 100vw;
 }
 
 .container {
     display: flex;
     width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
   
 }
 .panel {
     background-size: auto 100%;
     background-position: center;
+    background-repeat: no-repeat;
     height:80vh;
     border-radius: 5rem;
     color: #fff;
@@ -46,12 +51,13 @@ body {
     font-size: 3rem;
     position: absolute;
     bottom: 3rem;
-    left: 2rem;
+    left: 8rem;
     opacity: 0;
 
 }
 .panel.active {
     flex: 5;
+    border-radius : max(0rem,min(1rem));
 }
 .panel.active h3{
     opacity: 1;
@@ -72,9 +78,17 @@ body {
     background-image: url('https://images.unsplash.com/photo-1619266465172-02a857c3556d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dm9sY2Fub3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60');
     
 }
+.panel:nth-child(5){
+    background-image: url('https://images.unsplash.com/photo-1488818138649-d2734488e6d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80');
+    color : rgb(201, 117, 117);
+}
+
 
 @media(max-width: 480px){
     .container{
         width: 100vw;
+    }
+    .panel:nth-of-type(4),:nth-of-type(5){
+        display: none;
     }
 }
