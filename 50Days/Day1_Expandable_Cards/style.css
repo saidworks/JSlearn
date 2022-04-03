@@ -1,0 +1,80 @@
+/* Flowers and Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Send+Flowers&display=swap');
+@import "resetter.css";
+
+*{ 
+ box-sizing: border-box;
+}
+
+html {
+    /* change value of rem */
+    font-size: 10px; 
+}
+h1 {
+    font-family: 'Send Flowers', sans-serif;
+    font-size: 5rem;
+}
+body {
+        font-family:  'Montserrat', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height : 100vh;
+        overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+  
+}
+.panel {
+    background-size: auto 100%;
+    background-position: center;
+    height:80vh;
+    border-radius: 5rem;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 1rem;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+.panel h3{
+    font-size: 3rem;
+    position: absolute;
+    bottom: 3rem;
+    left: 2rem;
+    opacity: 0;
+
+}
+.panel.active {
+    flex: 5;
+}
+.panel.active h3{
+    opacity: 1;
+}
+.panel:nth-child(1){
+    background-image: url('https://images.unsplash.com/photo-1646372171178-43b9951aa8dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2686&q=80');
+    
+}
+.panel:nth-child(2){
+    background-image: url('https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80');
+    
+}
+.panel:nth-child(3){
+    background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+    
+}
+.panel:nth-child(4){
+    background-image: url('https://images.unsplash.com/photo-1619266465172-02a857c3556d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dm9sY2Fub3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60');
+    
+}
+
+@media(max-width: 480px){
+    .container{
+        width: 100vw;
+    }
+}
