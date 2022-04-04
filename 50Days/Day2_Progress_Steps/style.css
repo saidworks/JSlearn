@@ -1,0 +1,115 @@
+/* Flowers and Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+:root{
+    --line-border-fill:#3498db;
+    --line-border-empty:#e0e0e0;
+}
+
+*{ 
+ box-sizing: border-box;
+}
+
+html {
+    /* change value of rem */
+    font-size: 10px; 
+}
+h1 {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 5rem;
+    text-align: center;
+}
+.title{
+    display : block;
+    color: var(--line-border-empty)
+}
+body {
+        background-color: rgb(125, 125, 151);
+        font-family:  'Oxygen', sans-serif;
+        height : 100vh;
+        overflow: hidden;
+
+}
+.container{
+        font-size: 2rem ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+}
+
+ .progress-container {
+     display: flex;
+     justify-content: space-between;
+     position: relative;
+     text-align: center;
+     width: 20vw;
+     margin : 3rem;
+     max-width: 100%;
+ }
+ .progress-container::before {
+     content:'' ;
+    background-color: var(--line-border-empty);
+    position : absolute;
+    top: 50%;
+    left:0;
+    height: 0.4rem;
+    width : 100%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.progress {
+    background-color: var(--line-border-fill);
+    position : absolute;
+    top: 50%;
+    left:0;
+    height: 0.4rem;
+    width : 0%;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 0.4 ease;
+}
+
+.circle{
+    background-color: var(--line-border-empty);
+    color: #999 ;
+    border-radius: 50%;
+    height : 3rem;
+    width : 3rem;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #e0e0e0;
+    transition: .4s ease;
+}
+
+.circle.active{
+    border-color: var(--line-border-fill);
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    color : white;
+    border :0;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0.8rem 3rem;
+    margin: 0.5rem;
+    font-size: 1.4rem ;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline : 0;
+}
+
+.btn:disabled {
+    background-color: var(--line-border-empty) ;
+    cursor: not-allowed;
+}
