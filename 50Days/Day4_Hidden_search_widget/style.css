@@ -1,0 +1,68 @@
+/* Flowers and Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Send+Flowers&display=swap');
+@import "resetter.css";
+
+*{ 
+ box-sizing: border-box;
+}
+
+html {
+    /* change value of rem */
+    font-size: 10px; 
+}
+h1 { 
+    font-family: 'Send Flowers', sans-serif;
+    font-size: 5rem;
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+}
+body {
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+    font-family:  'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height : 100vh;
+    overflow: hidden;
+}
+
+.search {
+    position : relative;
+    height: 50px;
+}
+
+.search .input{
+    background-color: white;
+    border: 0;
+    font-size: 2rem;
+    height: 5rem;
+    width : 5rem;
+    transition: width 0.3s ease;
+}
+
+.btn {
+    background-color: white;
+    border:0;
+    cursor: pointer;
+    font-size: 2.4rem;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 5rem;
+    width: 5rem;
+    transition: transform 0.3s ease;
+}
+
+.btn:focus .input:focus{
+    outline: none;
+}
+
+.search.active .input{
+    width : 30rem;
+}
+
+.search.active .btn{
+    transform : translateX(25rem);
+
+}
