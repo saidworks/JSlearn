@@ -1,0 +1,39 @@
+/* Flowers and Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu');
+@import "resetter.css";
+
+*{ 
+ box-sizing: border-box;
+}
+
+html {
+    /* change value of rem */
+    font-size: 10px; 
+}
+
+body {
+        font-family:  'Ubuntu', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height : 100vh;
+        overflow: hidden;
+}
+
+.bg {
+        background: url('https://images.unsplash.com/photo-1559740451-b895701fa4b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+        position: absolute;
+        top: -3rem;
+        left: -3rem;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        filter: blur(70px);
+}
+
+.loading-text{
+    font-size: large;
+    color: #fff;
+
+}
