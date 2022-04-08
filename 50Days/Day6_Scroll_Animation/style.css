@@ -1,0 +1,53 @@
+/* Flowers and Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Send+Flowers&display=swap');
+@import "resetter.css";
+
+*{ 
+ box-sizing: border-box;
+}
+
+html {
+    /* change value of rem */
+    font-size: 10px; 
+}
+h1 {
+    font-family: 'Send Flowers', sans-serif;
+    font-size: 5rem;
+}
+body {
+    background-color: #efedd6;
+    font-family:  'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h2{
+    margin: 2rem;
+}
+.box{
+    font-size: 3rem;
+    background-color: steelblue;
+    color:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #fff 0.1rem solid;
+    border-radius: 5em;
+    margin: 0.5rem;
+    width: 30vw;
+    height: 20vh;
+    box-shadow: 2rem 4rem 5rem rgba(0,0,0,0.3);
+    transform: translateX(200%);
+    transition: transform 0.4s ease;
+}
+
+.box:nth-of-type(even){
+    transform: translateX(-200%);
+}
+
+.box.show{
+    transform: translateX(0);
+}
