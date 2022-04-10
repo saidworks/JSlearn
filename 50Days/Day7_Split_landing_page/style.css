@@ -131,7 +131,7 @@ body {
     width : var(--other-width) ;
 }
 
-@media(max-width:80rem){
+@media(max-width:60rem){
     h1{
         font-size: 2rem;
         top:30%;
