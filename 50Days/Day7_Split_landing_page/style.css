@@ -8,6 +8,8 @@
     --right-bg-color:rgba(43,43,43,0.8);
     --left-btn-hover-color: rgba(25,150,186,1);
     --right-btn-hover-color: rgba(28,120,14,1);
+    --hover-width:75%;
+    --other-width:25%;
 }
  
 *{ 
@@ -23,7 +25,8 @@ h1 {
     font-size: 5rem;
     color: white;
     position: absolute;
-    margin: 30%;
+    left: 33%;
+    top: 40%;
     white-space: nowrap;
 }
 body {
@@ -34,7 +37,7 @@ body {
 
 .btn{
     position: absolute;
-    left: 50%;
+    left: 45%;
     top:50%;
     display: flex;
     align-items: center;
@@ -90,6 +93,14 @@ body {
     background-color: var(--left-bg-color);
 }
 
+.hover-left .left{
+    width : var(--hover-width);
+}
+
+.hover-left .right{
+    width : var(--other-width) ;
+}
+
 .split.right::before{
     content:'';
     position:absolute;
@@ -104,4 +115,12 @@ body {
     background: url('./kerde-severin-NVD_32BBZFE-unsplash.jpg') ;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.hover-right .right{
+    width : var(--hover-width);
+}
+
+.hover-right .left{
+    width : var(--other-width) ;
 }
