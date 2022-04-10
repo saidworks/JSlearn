@@ -10,6 +10,7 @@
     --right-btn-hover-color: rgba(28,120,14,1);
     --hover-width:75%;
     --other-width:25%;
+    --speed: 1000ms;
 }
  
 *{ 
@@ -93,6 +94,11 @@ body {
     background-color: var(--left-bg-color);
 }
 
+.split.left,.split.right,.split.left::before,.split.right::before{
+    transition: all var(--speed) ease-in-out;
+}
+
+
 .hover-left .left{
     width : var(--hover-width);
 }
@@ -123,4 +129,16 @@ body {
 
 .hover-right .left{
     width : var(--other-width) ;
+}
+
+@media(max-width:80rem){
+    h1{
+        font-size: 2rem;
+        top:30%;
+    }
+    .btn{
+        padding: 1.2rem;
+        width: 12rem;
+    }
+
 }
