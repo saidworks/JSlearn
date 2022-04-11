@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&family=Send+Flowers&display=swap');
+@import "resetter.css";
+
+*{ 
+ box-sizing: border-box;
+}
+
+html {
+    /* change value of rem */
+    font-size: 10px; 
+}
+
+body {
+        background-color: steelblue;
+        color: #fff;
+        font-family:  'Muli', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height : 100vh;
+        overflow: hidden;
+}
+
+.container{
+    background-color: rgba(0,0,0,0.4);
+    padding: 2rem 4rem;
+    border-radius: 0.5rem;
+}
+
+.container h1{
+    font-family: 'Send Flowers', sans-serif;
+    font-size: 5rem;
+    margin-left: 10%;
+}
+
+
+.container a{
+    text-decoration: none;
+    color: lightblue;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background-color: lightblue;
+    padding: 1.5rem;
+    font-family: inherit;
+    font-size: 1.6rem;
+    border: 0;
+    border-radius: 0.5rem;
+}
+
+.btn:focus{
+    outline:0;
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
+
+.text{
+    margin-top: 3rem;
+}
+
+
+.form-control {
+    position : relative;
+    margin: 2 rem 0 4rem;
+    width: 30rem;
+}
+
+.form-control input{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 0.2rem #fff solid;
+    display: block;
+    width:100%;
+    padding: 1.5rem 0;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.form-control input:focus .form-control input:valid {
+    outline:0; 
+
+}
+
