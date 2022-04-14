@@ -40,3 +40,41 @@ body {
     overflow: hidden;
     transition: 0.3 ease;
 }
+
+.faq.active {
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1),0 3px 6px rgba(0,0,0,0.1); 
+}
+
+.faq.active::before,
+.faq.active::after{
+    content: '\f086';
+    font-family: "Font Awesome 5 Free"; 
+    color:#2eccfe;
+    font-size: 9rem;
+    position: absolute;
+    opacity: 0.3;
+    top: 2rem;
+    left: 2rem;
+    z-index: 0;
+}
+
+.faq.active::before{
+    color: #1bd48d;
+    top: 2rem;
+    right: 2rem;
+    transform : rotateY(180deg)
+}
+
+.faq-title{
+    margin: 0 3.5rem 0 0;
+}
+
+.faq-text{
+    display: none;
+    margin: 3rem 0 0;
+}
+
+.faq.active .faq-text{
+    display: block;
+}
