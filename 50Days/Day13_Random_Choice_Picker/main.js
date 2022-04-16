@@ -38,7 +38,7 @@ function randomSelect(){
                                     },100);
     setTimeout(()=>{
         clearInterval(interval);
-      
+    
         setTimeout(()=>{
             const randomChoice = pickRandomTag();
             removeAllHighlights();
