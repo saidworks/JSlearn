@@ -1,0 +1,80 @@
+/* Square Font */
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+@import "resetter.css";
+
+:root{
+    --body-bg-color :#321C28;
+    --nav-bg-color: #3F2F3F;
+    --nav-text-color: #468177;
+}
+
+
+*{ 
+ box-sizing: border-box;
+}
+
+html {
+    /* change value of rem */
+    font-size: 10px; 
+}
+h1 {
+    font-family: 'Square Peg', sans-serif;
+    font-size: 5rem;
+}
+body {
+    background-color: var(--body-bg-color);
+    font-family:  'Square Peg', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height : 100vh;
+}
+
+nav{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    background-color: var(--nav-bg-color);
+    font-size: 2rem;
+    width: 8rem;
+    transition: width 0.6s linear;
+}
+
+nav.active{
+    width: 35rem;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 0;
+    transition: width 0.6s linear;
+}
+
+nav.active ul{
+    width: 100%;
+}
+
+nav ul li{
+    transform: rotateY(0deg);
+    opacity: 0;
+    transition: transform 0.6s linear, opacity 0.6s linear;
+} 
+
+nav.active ul li{
+    opacity: 1;
+    transform: rotateY(360deg);
+}
+
+nav ul a {
+    position: relative;
+    color: var(--nav-text-color);
+    font-size: larger;
+    text-decoration: none;
+    margin: 0 1rem;
+     
+}
