@@ -6,6 +6,7 @@
     --body-bg-color :#321C28;
     --nav-bg-color: #3F2F3F;
     --nav-text-color: #468177;
+    --body-bottom-color : #A1AFBA;
 }
 
 
@@ -23,6 +24,9 @@ h1 {
 }
 body {
     background-color: var(--body-bg-color);
+    background-image: linear-gradient(to bottom,
+                                    var(--body-bg-color) 0 50%,
+                                    var(--body-bottom-color) 50% 100% );
     font-family:  'Square Peg', sans-serif;
     display: flex;
     justify-content: center;
@@ -33,18 +37,19 @@ body {
 nav{
     display:flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 3px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     background-color: var(--nav-bg-color);
     font-size: 2rem;
-    width: 8rem;
+    width: 4rem;
     transition: width 0.6s linear;
 }
 
 nav.active{
-    width: 35rem;
+    width: 30rem;
 }
+
 
 nav ul{
     display: flex;
@@ -77,4 +82,35 @@ nav ul a {
     text-decoration: none;
     margin: 0 1rem;
      
+}
+
+.icon{
+    background-color: var(--nav-bg-color);
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    height: 3rem;
+    width: 3rem;  
+}
+
+.icon .line {
+    background-color: var(--nav-text-color);
+    height: 0.2rem;
+    width: 2rem;
+    position: absolute;
+    top: 1rem;
+    transition: transform 0.7s linear;
+}
+
+.icon .line2{
+    top: auto;
+    bottom:1rem;
+}
+
+nav.active .icon .line1{
+    transform: rotate(-405deg) translateY(0.6rem);
+}
+nav.active .icon .line2{
+    transform: rotate(405deg) translateY(-0.6rem);
 }
