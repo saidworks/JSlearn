@@ -11,16 +11,43 @@ const sportNames = getsportsName(API_URL);
 async function getsportsName(url){
     const res = await fetch(url);
     const data = await res.json();
-    return data.sports;
+    console.log(data.sports)
+    showSports(data.sports);
+}
+
+const showSports = function(sports) {
+    main.innerHTML = "";
+    for(const sport of sports){
+        const {strSport,strFormat,strSportThumb,strSportDescription} = sport;
+        const sportEl = document.createElement("div");
+        sportEl.classList.add("sport");
+        sportEl.innerHTML = `
+            <div class="sport ">
+                <img src="${strSportThumb}" alt="">
+                <div class="sport-info">
+                    <h3>${strSport}</h3>
+                    <span class="green">${strFormat}</span>
+                </div>
+                <div class="overview">
+                    <h3>Overview</h3>
+                    ${strSportDescription}                
+                </div>
+            </div>
+        `
+        main.appendChild(sportEl);
+    }
+ 
+
 }
 
 //DOM Logic
-const sport  = document.querySelector('.sport');
+// const sportEl  = document.querySelector('.sport');
 const overview = document.querySelector('.overview');
 const sportInfo  = document.querySelector('.sport-info');
 const form = document.getElementById('form');
 const sports = document.querySelectorAll('.sport');
 const search = document.getElementById('search');
+const main = document.getElementById('main');
 
 form.addEventListener('submit',(e)=> {
     e.preventDefault();
@@ -29,7 +56,6 @@ form.addEventListener('submit',(e)=> {
     for(let i=0;i<sports.length;i++){
        
        if(sports[i].textContent.toLowerCase().includes(searchTerm.toLowerCase())){
-        
         sports[i].classList.remove("is-hidden")
        }
        else{
@@ -40,7 +66,7 @@ form.addEventListener('submit',(e)=> {
     })
 
 
-console.log(sportNames);
+
 // sportNames.forEach(sport=> {console.log(sport)
     
 // });

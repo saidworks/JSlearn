@@ -61,6 +61,7 @@ header {
 main {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .sport {
@@ -78,7 +79,7 @@ main {
 }
 
 .sport img {
-  width: 100%;
+  width: 95%;
 }
 
 .sport-info {
