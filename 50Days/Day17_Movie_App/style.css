@@ -126,6 +126,6 @@ main {
   transition: transform 0.3s ease-in;
 }
 
-.sport :hover .overview {
+.sport:hover .overview {
   transform: translateY(0);
 }
