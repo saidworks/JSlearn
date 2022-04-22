@@ -1,0 +1,98 @@
+/* Flowers and Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Send+Flowers&display=swap');
+@import "resetter.css";
+
+*{ 
+ box-sizing: border-box;
+}
+
+html {
+    /* change value of rem */
+    font-size: 10px; 
+}
+h1 {
+    font-family: 'Send Flowers', sans-serif;
+    font-size: 5rem;
+}
+body {
+    background-image: url(./img/david-marcu-78A265wPiO4-unsplash.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family:  'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height : 100vh;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left : 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    z-index: -1;
+}
+.slider-container{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    height: 70vh;
+    width:70vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide{
+    background-image: url('./img/blake-verdoorn-cssvEZacHvQ-unsplash.jpg');
+    opacity: 0;
+    height: 100vh;
+    width:100vw;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: -3%;
+    transition: 0.4s ease;
+    z-index: 1;  
+}
+.arrow {
+    position: fixed;
+    background-color: transparent;
+    padding: 20px;
+    font-size: 3rem;
+    border: 0.2rem solid orange; 
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.arrow:focus {
+    outline: 0;
+}
+
+.left-arrow{
+    left: calc(10%);
+}
+.right-arrow{
+    right: calc(10%);
+}
+.slide.active{
+    opacity: 1;
+}
+.slide:nth-child(1){
+    background-image: url('./img/david-marcu-78A265wPiO4-unsplash.jpg');
+}
+.slide:nth-child(2){
+    background-image: url('./img/federico-respini-sYffw0LNr7s-unsplash.jpg');
+}
+.slide:nth-child(3){
+    background-image: url('./img/henry-be-IicyiaPYGGI-unsplash.jpg');
+}
+.slide:nth-child(4){
+    background-image: url('./img/niko-photos-tGTVxeOr_Rs-unsplash.jpg');
+}
+
