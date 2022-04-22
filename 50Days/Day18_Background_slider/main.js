@@ -22,7 +22,9 @@ function setSlide(){
     slides.forEach(slide=>{
         slide.classList.remove('active')
     })
-
+    if(activeSlide>=images.length){
+        activeSlide =0;
+    }
     slides[activeSlide].classList.add('active');
 }
 
@@ -41,12 +43,13 @@ rightBtn.addEventListener('click',()=>{
 
 leftBtn.addEventListener('click',()=>{
     let imgs = images;
-    if(activeSlide>=0){
+    if(activeSlide>=1){
     activeSlide--;
     }
     else{
-        activeSlide = 0;
+        activeSlide = 4;
     }
+    console.log(activeSlide);
     setSlide();
     setBgToBody(imgs);
 })
