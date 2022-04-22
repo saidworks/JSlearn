@@ -15,7 +15,6 @@ h1 {
     font-size: 5rem;
 }
 body {
-    background-image: url(./img/david-marcu-78A265wPiO4-unsplash.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -57,7 +56,7 @@ body::before{
     position: absolute;
     top: -3%;
     transition: 0.4s ease;
-    z-index: 1;  
+    z-index: 100;  
 }
 .arrow {
     position: fixed;
@@ -83,16 +82,16 @@ body::before{
 .slide.active{
     opacity: 1;
 }
-.slide:nth-child(1){
+.slide:nth-of-type(1){
     background-image: url('./img/david-marcu-78A265wPiO4-unsplash.jpg');
 }
-.slide:nth-child(2){
+.slide:nth-of-type(2){
     background-image: url('./img/federico-respini-sYffw0LNr7s-unsplash.jpg');
 }
-.slide:nth-child(3){
+.slide:nth-of-type(3){
     background-image: url('./img/henry-be-IicyiaPYGGI-unsplash.jpg');
 }
-.slide:nth-child(4){
+.slide:nth-of-type(4){
     background-image: url('./img/niko-photos-tGTVxeOr_Rs-unsplash.jpg');
 }
 
