@@ -13,8 +13,40 @@ slides.forEach(slide=>{
 })
 
 function setBgToBody(imgs){
-
     body.style.backgroundImage = `url("${imgs[activeSlide]}")`;
     
 }
-setBgToBody(images);
+
+
+function setSlide(){
+    slides.forEach(slide=>{
+        slide.classList.remove('active')
+    })
+
+    slides[activeSlide].classList.add('active');
+}
+
+rightBtn.addEventListener('click',()=>{
+    let imgs = images;
+    if(activeSlide<images.length){
+    activeSlide++;
+    }
+    else{
+        activeSlide = 0;
+    }
+    setSlide();
+    setBgToBody(imgs);
+})
+
+
+leftBtn.addEventListener('click',()=>{
+    let imgs = images;
+    if(activeSlide>=0){
+    activeSlide--;
+    }
+    else{
+        activeSlide = 0;
+    }
+    setSlide();
+    setBgToBody(imgs);
+})
