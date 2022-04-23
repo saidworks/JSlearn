@@ -1,0 +1,142 @@
+/* Flowers and Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:300&display=swap');
+@import "resetter.css";
+
+:root{
+    --primary-color : #545455;
+    --secondary-color: #ffffff;
+    --tertiary-color: #FF7470;
+}
+
+*{ 
+ box-sizing: border-box;
+}
+
+html {
+    /* change value of rem */
+    font-size: 10px; 
+    transition: all 0.5s ease-in;
+}
+
+html.dark{
+    --primary-color : #ffffff;
+    --secondary-color: #545455;
+    --tertiary-color: #FF7470;
+    background-color: var(--secondary-color);
+}
+
+
+
+body {
+    font-family:  'Heebo', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height : 100vh;
+    overflow: hidden;
+    background-color: var(--secondary-color);
+    
+}
+
+.toggle{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 0;
+    border-radius: 0.4rem;
+    padding: 0.8rem 1.2rem;
+    position: absolute;
+    top: 10rem;
+}
+
+.toggle:focus{
+    outline: none;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clock{
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+   
+}
+
+.needle{
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 6.5rem;
+    width: 3px;
+    transform-origin: bottom center;
+}
+
+.needle.hour{
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+
+.needle.minute{
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 10rem;
+}
+
+.needle.second{
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 10rem;
+    width:1.5px;
+    background-color: var(--tertiary-color);
+}
+
+.center-point{
+    background-color: var(--tertiary-color);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.center-point::after{
+    content: "";
+    background-color: var(--primary-color);
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.time{
+    font-size: 6rem;
+}
+
+.date{
+    color: var(--tertiary-color);
+    letter-spacing: 0.3px;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.date .circle{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    width: 3rem;
+    height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+}
