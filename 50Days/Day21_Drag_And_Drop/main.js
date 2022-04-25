@@ -4,26 +4,39 @@ const fill = document.querySelector('.fill');
 fill.addEventListener('dragstart',dragStart)
 fill.addEventListener('dragend',dragEnd)
 
+for(const box of boxes){
+    box.addEventListener('dragover',dragOver)
+    box.addEventListener('dragenter',dragEnter)
+    box.addEventListener('dragleave',dragLeave)
+    box.addEventListener('drop',dragDrop)
+}
+
+
+
 function dragStart(){
-    console.log("drag Start")
+    this.classList.add('hold');
+    setTimeout(()=>   this.remove(),0);
+  
 }
 
 function dragEnd(){
-    console.log("drag End")
+   this.className = 'fill';
 }
 
-function dragOver(){
-    console.log("drag Over")
+function dragOver(e){
+    e.preventDefault();
 }
 
-function dragEnter(){
-    console.log("drag Enter")
+function dragEnter(e){
+    e.preventDefault();
+    this.classList.add("hovered");
 }
 
 function dragLeave(){
-    console.log("drag Leave")
+    this.className = "empty";
 }
 
 function dragDrop(){
-    console.log("drag Drop")
+    this.className = 'empty';
+    this.append(fill);
 }

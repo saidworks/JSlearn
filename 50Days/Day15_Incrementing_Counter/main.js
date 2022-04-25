@@ -11,6 +11,7 @@ counters.forEach(counter => {
             counter.innerText = `${c + increment}`;
             setTimeout(updateCounter,10);
         }
+      
     }
 
     updateCounter();

@@ -3,6 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Send+Flowers&display=swap');
 @import "resetter.css";
 
+:root{
+    --primary-color: #5358AA;
+    --secondary-color: #D9914B;
+    --tertiary-color: #61827E;
+    --alternative-color: #CDA575;
+}
+
 *{ 
  box-sizing: border-box;
 }
@@ -16,11 +23,13 @@ h1 {
     font-size: 5rem;
 }
 body {
-        font-family:  'Montserrat', sans-serif;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height : 100vh;
-        overflow: hidden;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family:  'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height : 100vh;
+    overflow: hidden;
 }
