@@ -1,0 +1,81 @@
+/* Flowers and Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Send+Flowers&display=swap');
+@import "resetter.css";
+
+:root{
+    --primary-color: #433c4d;
+    --secondary-color:  #e5b4ea;
+    --tertiary-color: #4b01b8;
+    --alternative-color: #faf9fd;
+}
+
+*{ 
+ box-sizing: border-box;
+}
+
+html {
+    /* change value of rem */
+    font-size: 10px; 
+}
+h1 {
+    font-family: 'Send Flowers', sans-serif;
+    font-size: 5rem;
+}
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family:  'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height : 100vh;
+    overflow: hidden;
+}
+
+.kinetic{
+    position: relative;
+    height: 10vh;
+    width: 10vw;
+}
+
+.kinetic::after , .kinetic::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 0;
+    height: 0;
+    border: 5rem solid transparent;
+    border-bottom-color: var(--alternative-color);
+    animation: rotateA 2s linear infinite 0.5s;
+}
+
+.kinetic::before {
+    transform: rotate(90deg);
+    animation: rotateB 2s linear infinite 0.5s;
+}
+
+@keyframes rotateA {
+    0% , 25% {
+        transform : rotate(0deg);
+    }
+    50%,75%{
+        transform : rotate(180deg);
+    }
+    100%{
+        transform : rotate(360deg);
+    }
+}
+
+@keyframes rotateB {
+    0% , 25% {
+        transform : rotate(0deg);
+    }
+    50%,75%{
+        transform : rotate(-180deg);
+    }
+    100%{
+        transform : rotate(-360deg);
+    }
+}
