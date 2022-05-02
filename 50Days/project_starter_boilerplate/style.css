@@ -1,13 +1,13 @@
 /* Flowers and Montserrat */
-@import url('https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Send+Flowers&display=swap');
 @import "resetter.css";
 
 :root{
-    --primary-color: #5358AA;
-    --secondary-color: #D9914B;
-    --tertiary-color: #61827E;
-    --alternative-color: #CDA575;
+    --primary-color: #30343F;
+    --secondary-color: #FAFAFF;
+    --tertiary-color: #E4D9FF;
+    --alternative-color: #273469;
+    --border-color: #1E2749;
 }
 
 *{ 

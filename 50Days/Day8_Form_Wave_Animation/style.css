@@ -31,7 +31,9 @@ body {
 .container h1{
     font-family: 'Send Flowers', sans-serif;
     font-size: 5rem;
-    margin-left: 10%;
+    width: 100%;
+    letter-spacing: normal;
+    text-align: center;
 }
 
 
