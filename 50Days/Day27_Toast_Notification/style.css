@@ -1,0 +1,86 @@
+/* Flowers and Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Send+Flowers&display=swap');
+@import "resetter.css";
+
+:root{
+    --primary-color: #30343F;
+    --secondary-color: #FAFAFF;
+    --tertiary-color: #E4D9FF;
+    --alternative-color: #273469;
+    --border-color: #1E2749;
+}
+
+*{ 
+ box-sizing: border-box;
+}
+
+html {
+    /* change value of rem */
+    font-size: 10px; 
+}
+h1 {
+    font-family: 'Send Flowers', sans-serif;
+    font-size: 5rem;
+    margin: 2%;
+}
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family:  'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height : 100vh;
+    overflow: hidden;
+    font-size: 2rem;
+}
+
+.btn{
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    font-family: inherit;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: none;
+}
+.btn:active {
+    transform: scale(0.98);
+}
+
+#toasts{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.toast {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    outline:none;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+}
+
+.show{
+    transform: scale(0.98) ;
+    transition: transform 0.5s ease-in;
+}
+
+.hide{
+    display: none;
+    
+}
