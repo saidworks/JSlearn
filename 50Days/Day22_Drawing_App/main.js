@@ -64,6 +64,7 @@ canvas.addEventListener('mousemove',(e)=>{
     
 })
 
+clearEl.addEventListener('click',()=>ctx.clearRect(0, 0, canvas.width, canvas.height));
 
 function drawCircle(x,y){
     ctx.beginPath();
