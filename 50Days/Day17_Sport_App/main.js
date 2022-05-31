@@ -1,3 +1,15 @@
+// const sportEl  = document.querySelector('.sport');
+const overview = document.querySelector('.overview');
+const sportInfo  = document.querySelector('.sport-info');
+const form = document.getElementById('form');
+const sports = document.querySelectorAll('.sport');
+const search = document.getElementById('search');
+const main = document.getElementById('main');
+
+  
+
+
+
 //API logic
 //https://www.thesportsdb.com/api.php
 const API_URL = "https://www.thesportsdb.com/api/v1/json/2/all_sports.php";
@@ -53,16 +65,6 @@ const showSports = function(sports) {
 
 }
 
-//DOM Logic
-// const sportEl  = document.querySelector('.sport');
-const overview = document.querySelector('.overview');
-const sportInfo  = document.querySelector('.sport-info');
-const form = document.getElementById('form');
-const sports = document.querySelectorAll('.sport');
-const search = document.getElementById('search');
-const main = document.getElementById('main');
-
-  
 
 
 
