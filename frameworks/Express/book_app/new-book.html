@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>BookStore - Add new book</title>
+</head>
+<body>
+    <div class="container">
+        <hr>
+        <h1>Create New Book</h1>
+        <hr>
+    
+        <form action="http://localhost:3000/book" method="POST">
+            <div class="form-group">
+                <label for="isbn">ISBN</label>
+                <input class="form-control" name="isbn">
+            </div>
+    
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input class="form-control" name="title">
+            </div>
+            <div class="form-group">
+                <label for="subtitle">Sub Title</label>
+                <input class="form-control" name="subtitle">
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input class="form-control" name="author">
+            </div>
+            <div class="form-group">
+                <label for="published">Published Date</label>
+                <input class="form-control" type="date" name="published">
+            </div>
+            <div class="form-group">
+                <label for="publisher">Publisher</label>
+                <input class="form-control" name="publisher">
+            </div>
+            <div class="form-group">
+                <label for="pages">Number of Pages</label>
+                <input class="form-control" name="pages">
+            </div>
+            <div class="form-group">
+                <label for="pages" class="form-label">Description</label>
+                <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="website">Website</label>
+                <input class="form-control" name="website">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
