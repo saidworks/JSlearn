@@ -34,10 +34,55 @@ app.post('/book', (req,res)=>{
     res.send('Book is added to the database');
 });
 
-//get 
+//get all books
 app.get('/books',(req,res)=>{
     res.json(books);
 })
+// get one specific book by isbn
+app.get('/book/:isbn',(req,res)=>{
+    const isbn = req.params.isbn;
+
+    for(let book of books){
+        if(book.isbn === isbn){
+            res.json(book);
+            return;
+        }
+    }
+    res.status(404).send("Book not found");
+});
+
+//delete a book
+app.delete('/book/:isbn', (req,res)=> {
+    //reading isbn from an URL 
+    const isbn = req.params.isbn;
+
+    //Remove item from the books array
+    books = books.filter(i =>{
+        if(i.isbn !== isbn){
+            return true;
+        }
+        return false;
+    })
+    res.send('Book is deleted');
+})
+
+//edit specific book info
+app.put('/book/:isbn', (req,res) => {
+    // Reading isbn from the URL 
+    const isbn = req.params.isbn;
+    const newBook = req.body;
+
+    // update book info
+    for(let i = 0; i < books.length ; i++){
+        let book = books[i];
+        if(book.isbn === isbn){
+            books[i] = newBook;
+        }
+    }
+
+    res.send('Book is edited');
+})
+
 
 //define port for app to listen on 
 app.listen(port, ()=>{console.log(`application listening on port : ${port}`)});
