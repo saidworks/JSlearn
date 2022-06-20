@@ -1,14 +1,14 @@
 const setEditModal = (isbn) => {
     // Get information about the book using isbn
     const xhttp = new XMLHttpRequest();
-
+    console.log(xhttp);
     xhttp.open("GET",`http://localhost:3000/book/${isbn}`,false);
     xhttp.send();
 
     const book = JSON.parse(xhttp.responseText);
     console.log(book);
     const {title,subtitle,author,published,publisher,pages,description,website} = book;
-    console.log(title,isbn)
+    console.log(title,isbn);
     //filling information about the book in the form inside the modal;
     document.getElementById('isbn').value = book.isbn;
     document.getElementById('title').value = title;
@@ -20,8 +20,9 @@ const setEditModal = (isbn) => {
     document.getElementById('description').value = description;
     document.getElementById('website').value = website;
 
-    //setting up the action url for the book 
     document.getElementById('editForm').action = `http://localhost:3000/book/${isbn}`;
+    document.getElementById('editForm').method = "PUT";
+    console.log(document.getElementById('editForm'));
 }
 
 const deleteBook = (isbn) => {
@@ -54,7 +55,7 @@ const loadBooks = () => {
 
                 <div>Author: ${book.author}</div>
                 <div>Publisher: ${book.publisher}</div>
-                <div>Number Of Pages: ${book.numOfPages}</div>
+                <div>Number Of Pages: ${book.pages}</div>
 
                 <hr>
 
@@ -74,3 +75,16 @@ const loadBooks = () => {
 }
 
 loadBooks();
+
+// function editBook(){
+//     //setting up the action url for the book 
+    
+//     // console.log("working");    
+//     // const xhttp = new XMLHttpRequest();
+//     // xhttp.open('PUT',`http://localhost:3000/book/${isbn}`,false);
+//     // xhttp.send();
+
+//     document.getElementById('editForm').action = `http://localhost:3000/book/${isbn}`;
+//     document.getElementById('editForm').method = "PUT";
+//     console.log(document.getElementById('editForm'));
+// }

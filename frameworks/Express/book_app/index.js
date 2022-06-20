@@ -71,7 +71,7 @@ app.put('/book/:isbn', (req,res) => {
     // Reading isbn from the URL 
     const isbn = req.params.isbn;
     const newBook = req.body;
-
+    console.log(newBook);
     // update book info
     for(let i = 0; i < books.length ; i++){
         let book = books[i];
@@ -79,7 +79,8 @@ app.put('/book/:isbn', (req,res) => {
             books[i] = newBook;
         }
     }
-
+    let newBooks = JSON.stringify(books);
+    writeToJson(newBooks);
     res.send('Book is edited');
 })
 
