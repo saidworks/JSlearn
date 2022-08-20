@@ -1,0 +1,141 @@
+/* Flowers and Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+@import "resetter.css";
+
+:root{
+    --primary-color: #30343F;
+    --secondary-color: #FAFAFF;
+    --tertiary-color: #E4D9FF;
+    --alternative-color: #273469;
+    --border-color: #1E2749;
+}
+
+*{ 
+ box-sizing: border-box;
+}
+
+html {
+    /* change value of rem */
+    font-size: 10px; 
+}
+h1 {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 5rem;
+    margin-bottom: 5vh;
+}
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family:  'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height : 100vh;
+    overflow: hidden;
+}
+
+.user-form{
+    width:100%;
+    max-width: 70rem;
+}
+
+.user-form input{
+    width: 100%;
+    display: block;
+    background-color: var(--border-color);
+    border: none;
+    border-radius: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 2rem;
+    box-shadow: 0 5px 10px rgba(154 red,160 green, 185 blue,0.05 alpha) 
+    0 15px 40px rgba(0 red,0 green, 0 blue,1 alpha);
+
+}
+
+
+
+.user-form input:focus{
+    outline: none;
+}
+
+
+.user-form input::placeholder{
+    color: var(--tertiary-color);
+}
+
+
+.card{
+    max-width: 80rem;
+    background-color: var(--border-color);
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(154 red,160 green, 185 blue,0.05 alpha) 
+    0 15px 40px rgba(0 red,0 green, 0 blue,1 alpha);
+    display: flex;
+    padding: 3rem;
+    margin: 0 1.5rem;
+}
+
+.avatar{
+    border-radius: 50%;
+    border: 10px solid var(--alternative-color);
+    width: 15rem;
+    height: 15rem;
+}
+
+.user-info{
+    color: var(--tertiary-color);
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.user-info{
+    margin-top: 0;
+}
+
+.user-info ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    max-width: 40rem;
+}
+.user-info ul li{
+    display: flex;
+    align-items: center;
+}
+
+.user-info ul li strong{
+    font-size: 0.9 rem;
+}
+
+.repo{
+    text-decoration: none;
+    color: var(--tertiary-color);
+    font-size: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+@media (max-width:500px) 
+{
+    .title{
+        max-width: 70vw;
+        font-size: 3rem;
+    }
+.card {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 400px;
+}    
+.user-info ul li{
+  padding: 1vh 1vw;
+}
+}
